@@ -10,7 +10,6 @@ public class ConsoleUnlocker : MonoBehaviour
     private void Start()
 	{
         ConsoleMain.active = true;
-		
     }
 
 	void Update()
@@ -51,5 +50,11 @@ public class ConsoleUnlocker : MonoBehaviour
                 }
             }
         }
+    }
+
+    void OnApplicationQuit()
+    {
+        ConsoleMain.active = false;
+        ConsoleMain.liteVersion = true;
     }
 }
