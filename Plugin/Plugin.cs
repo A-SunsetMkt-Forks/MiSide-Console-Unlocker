@@ -12,26 +12,37 @@ public class ConsoleUnlocker : MonoBehaviour
         ConsoleMain.active = true;
     }
 
-	void Update()
+    private static int unlocked = 0;
+    void Update()
 	{
+        if (unlocked == 1)
+        {
+            Application.targetFrameRate = -1;
+            QualitySettings.vSyncCount = 0;
+        }
+        else if (unlocked == 2)
+        {
+            Application.targetFrameRate = 60;
+            QualitySettings.vSyncCount = 1;
+            unlocked = 0;
+        }
 
-		if (ConsoleMain.liteVersion)
+        if (ConsoleMain.liteVersion)
 		{
 			ConsoleMain.liteVersion = false;
 		}
-		if (UnityEngine.Input.GetKeyDown(KeyCode.U))
-		{
-			if (Application.targetFrameRate != -1)
-			{
-				Application.targetFrameRate = -1;
-				QualitySettings.vSyncCount = 0;
-			}
-			else
-			{
-                Application.targetFrameRate = 60;
-                QualitySettings.vSyncCount = 1;
-			}
+        if (UnityEngine.Input.GetKeyDown(KeyCode.U))
+        {
+            if (unlocked == 1)
+            {
+                unlocked = 2;
+            }
+            else
+            {
+                unlocked = 1;
+            }
         }
+
         if (UnityEngine.Input.GetKeyDown(KeyCode.F9)){
 			if (Time.timeScale != 0.0f)
 				Time.timeScale = 0.0f;
