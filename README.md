@@ -44,7 +44,7 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Plugin installation guide:
 
-1. download ConsoleUnlocker.dll file from here https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release
+1. download ConsoleUnlocker.dll file from here https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release-1.1.1
 2. create a folder named ConsoleUnlocker in MiSide\BepInEx\plugins
 3. place ConsoleUnlocker.dll into MiSide\BepInEx\plugins\ConsoleUnlocker
 4. launch the game and check if the mod works by pressing f9 (the game should be paused) press f9 again to unpause the game
@@ -52,7 +52,7 @@ Plugin installation guide:
 
 Руководство по установке плагина:
 
-1. скачайте файл ConsoleUnlocker.dll отсюда https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release
+1. скачайте файл ConsoleUnlocker.dll отсюда https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release-1.1.1
 2. создайте папку с именем ConsoleUnlocker в MiSide\BepInEx\plugins
 3. поместите ConsoleUnlocker.dll в MiSide\BepInEx\plugins\ConsoleUnlocker
 4. запустите игру и проверьте, работает ли мод, нажав f9 (игра должна быть поставлена ​​на паузу) еще раз нажмите f9, чтобы снять игру с паузы
