@@ -1,9 +1,4 @@
-﻿using UnityEditor;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.SceneManagement;
-using System.Collections.Generic;
-using System.IO;
 using BepInEx;
 
 public class ConsoleUnlocker : MonoBehaviour
