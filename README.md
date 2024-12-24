@@ -2,10 +2,12 @@
 
 
 ________________________________________________________________________________________________________________________________________________________
-Mod unlocking console and adding 'F9' keybind for time stop, 'U' bind for FPS unlocking and '/' bind for free camera in MiSide game 
+Mod unlocking console and adding 'F9' keybind for time stop, 'L' for camera light toogle and '/' bind for free camera in MiSide game 
+Supports custom keybinds through keybinds.json file now
 
 
-Мод разблокирующий консоль и добавляющий бинд 'F9' для остановки времени, бинд 'U' для снятия ограничения фпс и бинд '/' для свободной камеры в игре MiSide
+Мод разблокирующий консоль и добавляющий бинд 'F9' для остановки времени, бинд 'L' для включения/выключения освещения камеры и бинд '/' для свободной ка/меры в игре MiSide
+Теперь поддерживает пользовательские бинды через файл keybinds.json
 ________________________________________________________________________________________________________________________________________________________
 
 
@@ -44,18 +46,22 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Plugin installation guide:
 
-1. download ConsoleUnlocker.dll file from here https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release-1.1.1
+1. download ConsoleUnlocker.dll file from here https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release-1.2.0
 2. create a folder named ConsoleUnlocker in MiSide\BepInEx\plugins
 3. place ConsoleUnlocker.dll into MiSide\BepInEx\plugins\ConsoleUnlocker
 4. launch the game and check if the mod works by pressing f9 (the game should be paused) press f9 again to unpause the game
+5. [optional] if you want to change/add keybinds you can download keybinds.json file from here https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release-1.2.0
+   then place it in the same directory as ConsoleUnlocker.dll and edit the values in it according to your preferences.
 
 
 Руководство по установке плагина:
 
-1. скачайте файл ConsoleUnlocker.dll отсюда https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release-1.1.1
+1. скачайте файл ConsoleUnlocker.dll отсюда https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release-1.2.0
 2. создайте папку с именем ConsoleUnlocker в MiSide\BepInEx\plugins
 3. поместите ConsoleUnlocker.dll в MiSide\BepInEx\plugins\ConsoleUnlocker
 4. запустите игру и проверьте, работает ли мод, нажав f9 (игра должна быть поставлена ​​на паузу) еще раз нажмите f9, чтобы снять игру с паузы
+5. [опционально] если вы хотите изменить/добавить привязки клавиш, вы можете скачать файл keybinds.json отсюда https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release-1.2.0
+   после этого поместите его. в том же каталоге, что и ConsoleUnlocker.dll, и отредактируйте в нем значения под свои предпочтения.
 ________________________________________________________________________________________________________________________________________________________
 
 
