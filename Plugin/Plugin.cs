@@ -1,63 +1,57 @@
 ﻿using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using System.IO;
+using BepInEx;
 
 public class ConsoleUnlocker : MonoBehaviour
 {
-
-    static CapsuleCollider showerCapsule = null;
-    static GameObject blur = null;
+    private Dictionary<string, KeyCode> keybinds = new Dictionary<string, KeyCode>();
 
     private void Start()
-	{
+    {
         ConsoleMain.active = true;
+        LoadKeybinds();
     }
 
-    private static int unlocked = 0;
     void Update()
-	{
-        if (unlocked == 1)
+    {
+        foreach (var keybind in keybinds)
         {
-            Application.targetFrameRate = -1;
-            QualitySettings.vSyncCount = 0;
-        }
-        else if (unlocked == 2)
-        {
-            Application.targetFrameRate = 60;
-            QualitySettings.vSyncCount = 1;
-            unlocked = 0;
-        }
-
-        if (ConsoleMain.liteVersion)
-		{
-			ConsoleMain.liteVersion = false;
-		}
-        if (UnityEngine.Input.GetKeyDown(KeyCode.U))
-        {
-            if (unlocked == 1)
+            if (ConsoleMain.liteVersion)
             {
-                unlocked = 2;
+                ConsoleMain.liteVersion = false;
             }
-            else
+            if (UnityEngine.Input.GetKeyDown(keybind.Value))
             {
-                unlocked = 1;
-            }
-        }
-
-        if (UnityEngine.Input.GetKeyDown(KeyCode.F9)){
-			if (Time.timeScale != 0.0f)
-				Time.timeScale = 0.0f;
-			else
-				Time.timeScale = 1.0f;
-        }
-
-        if (UnityEngine.Input.GetKeyDown(KeyCode.Slash))
-        {
-            if (Reflection.FindObjectsOfType<ConsoleCall>(true).Length > 0)
-            {
-                ConsoleCall camerafly = Reflection.FindObjectsOfType<ConsoleCall>(true)[0];
-                if (camerafly)
+                if (keybind.Key == "TogglePause")
                 {
-                    camerafly.CameraFly();
+                    Debug.Log("TogglePause");
+                    if (Time.timeScale != 0.0f) 
+                    { 
+                        Time.timeScale = 0.0f;
+                    }
+                    else 
+                    {
+                        Time.timeScale = 1.0f;
+                    }
+                }
+                else if (keybind.Key == "CameraFly")
+                {
+                    Debug.Log("CameraFly");
+                    GameObject.Find("Game/ConsoleCall").GetComponent<ConsoleCall>().CameraFly();
+                }
+                else if (keybind.Key == "CameraLight")
+                {
+                    Debug.Log("CameraLight");
+                    GameObject.Find("Game/ConsoleCall").GetComponent<ConsoleCall>().CameraLight();
+                }
+                else
+                {
+                    Debug.Log(keybind.Key);
+                    ConsoleCommandsGame.Command(keybind.Key);
                 }
             }
         }
@@ -68,4 +62,88 @@ public class ConsoleUnlocker : MonoBehaviour
         ConsoleMain.active = false;
         ConsoleMain.liteVersion = true;
     }
+
+    private void LoadKeybinds()
+    {
+        string path = Path.Combine(Paths.PluginPath + "\\" + PluginInfo.PLUGIN_GUID, "keybinds.json");
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+
+            try
+            {
+                // Normalize JSON to handle unexpected newlines or whitespace
+                json = json.Replace("\n", "").Replace("\r", "").Trim(new char[] { '{', '}' }); // Remove outer braces and newlines
+
+                Dictionary<string, string> rawKeybinds = new Dictionary<string, string>();
+                string[] entries = json.Split(',');
+
+                foreach (var entry in entries)
+                {
+                    string[] kv = entry.Split(':');
+                    if (kv.Length == 2)
+                    {
+                        string command = kv[0].Trim(new char[] { '\"', ' ' });
+                        string keyString = kv[1].Trim(new char[] { '\"', ' ' });
+
+                        if (System.Enum.TryParse(keyString, out KeyCode key))
+                        {
+                            rawKeybinds[command] = keyString;
+                            keybinds[command] = key;
+                        }
+                        else
+                        {
+                            Debug.LogWarning($"Invalid keybind: {command} -> {keyString}");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"Malformed keybind entry: {entry}");
+                    }
+                }
+
+                // Debug log the parsed keybind configuration
+                foreach (var keybind in rawKeybinds)
+                {
+                    Debug.Log($"Keybind loaded: {keybind.Key} -> {keybind.Value}");
+                }
+
+                // Ensure F9 and Slash are bound to default commands if not in the JSON
+                if (!keybinds.ContainsKey("TogglePause"))
+                {
+                    keybinds["TogglePause"] = KeyCode.F9;
+                    Debug.Log("Default keybind set: TogglePause -> F9");
+                }
+                if (!keybinds.ContainsKey("CameraFly"))
+                {
+                    keybinds["CameraFly"] = KeyCode.Slash;
+                    Debug.Log("Default keybind set: CameraFly -> Slash");
+                }
+                if (!keybinds.ContainsKey("CameraLight"))
+                {
+                    keybinds["CameraLight"] = KeyCode.L;
+                    Debug.Log("Default keybind set: CameraLight -> L");
+                }
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogError($"Error parsing keybinds.json: {ex.Message}");
+            }
+        }
+        else
+        {
+            Debug.LogError($"Keybind configuration file not found at {path}");
+
+            // Set default keybinds if the configuration file is not found
+            keybinds["TogglePause"] = KeyCode.F9;
+            Debug.Log("Default keybind set: TogglePause -> F9");
+
+            keybinds["CameraFly"] = KeyCode.Slash;
+            Debug.Log("Default keybind set: CameraFly -> Slash");
+
+            keybinds["CameraLight"] = KeyCode.L;
+            Debug.Log("Default keybind set: CameraLight -> L");
+        }
+    }
+
 }
