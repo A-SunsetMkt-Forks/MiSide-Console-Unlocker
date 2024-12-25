@@ -36,7 +36,7 @@ public class ConsoleUnlocker : MonoBehaviour
                 else if (keybind.Key == "CameraFly")
                 {
                     Debug.Log("CameraFly");
-                    GameObject.Find("Game/ConsoleCall").GetComponent<ConsoleCall>().CameraFly();
+                    GameObject.Find("Game/ConsoleCall").GetComponent<ConsoleCall>().CameraFly(true);
                 }
                 else if (keybind.Key == "CameraLight")
                 {
