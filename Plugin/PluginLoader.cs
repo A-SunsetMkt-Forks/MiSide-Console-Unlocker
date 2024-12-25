@@ -7,13 +7,13 @@ public static class PluginInfo
 {
 	public const string PLUGIN_GUID = "ConsoleUnlocker";
 	public const string PLUGIN_NAME = "Console Unlocker";
-	public const string PLUGIN_VERSION = "1.2.0";
+	public const string PLUGIN_VERSION = "1.2.1";
 
 	public static PluginLoader Instance;
 	public static string AssetsFolder = Paths.PluginPath + "\\" + PluginInfo.PLUGIN_GUID + "\\Assets";
 }
 
-[BepInPlugin("org.miside.plugins.katanaadder", PluginInfo.PLUGIN_NAME, "1.0.0")]
+[BepInPlugin("org.miside.plugins.katanaadder", PluginInfo.PLUGIN_NAME, "1.2.1")]
 public class PluginLoader : BasePlugin
 {
 	public ManualLogSource Logger { get; private set; }
