@@ -47,7 +47,7 @@ Game directory should look like this after extraction from archive ![image](http
 
 Plugin installation guide:
 
-1. download ConsoleUnlocker.dll file from here https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release-1.2.0
+1. download ConsoleUnlocker.dll file from here https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release-1.2.1
 
 2. create a folder named ConsoleUnlocker in MiSide\BepInEx\plugins
 
@@ -55,7 +55,7 @@ Plugin installation guide:
 
 4. launch the game and check if the mod works by pressing f9 (the game should be paused) press f9 again to unpause the game
 
-5. [optional] if you want to change/add keybinds you can download keybinds.json file from here https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release-1.2.0
+5. [optional] if you want to change/add keybinds you can download keybinds.json file from here https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release-1.2.1
 
 6. then place it in the same directory as ConsoleUnlocker.dll and edit the values in it according to your preferences.
 
@@ -63,7 +63,7 @@ Plugin installation guide:
 
 Руководство по установке плагина:
 
-1. скачайте файл ConsoleUnlocker.dll отсюда https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release-1.2.0
+1. скачайте файл ConsoleUnlocker.dll отсюда https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release-1.2.1
 
 2. создайте папку с именем ConsoleUnlocker в MiSide\BepInEx\plugins
 
@@ -71,7 +71,7 @@ Plugin installation guide:
 
 4. запустите игру и проверьте, работает ли мод, нажав f9 (игра должна быть поставлена ​​на паузу) еще раз нажмите f9, чтобы снять игру с паузы
 
-5. [опционально] если вы хотите изменить/добавить привязки клавиш, вы можете скачать файл keybinds.json отсюда https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release-1.2.0
+5. [опционально] если вы хотите изменить/добавить привязки клавиш, вы можете скачать файл keybinds.json отсюда https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release-1.2.1
 
 6. после этого поместите его. в том же каталоге, что и ConsoleUnlocker.dll, и отредактируйте в нем значения под свои предпочтения.
 
