@@ -57,7 +57,7 @@ Plugin installation guide:
 
 5. [optional] if you want to change/add keybinds you can download keybinds.json file from here https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release-1.2.1
 
-5.1 then place it in the same directory as ConsoleUnlocker.dll and edit the values in it according to your preferences.
+6. [optional] then place it in the same directory as ConsoleUnlocker.dll and edit the values in it according to your preferences.
 
 -----
 
@@ -73,7 +73,7 @@ Plugin installation guide:
 
 5. [опционально] если вы хотите изменить/добавить привязки клавиш, вы можете скачать файл keybinds.json отсюда https://github.com/Rist8/MiSide-Console-Unlocker/releases/tag/Release-1.2.1
 
-5.1 после этого поместите его. в том же каталоге, что и ConsoleUnlocker.dll, и отредактируйте в нем значения под свои предпочтения.
+6. [опционально] после этого поместите его. в том же каталоге, что и ConsoleUnlocker.dll, и отредактируйте в нем значения под свои предпочтения.
 
 -----
 
