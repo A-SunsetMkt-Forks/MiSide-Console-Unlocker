@@ -4,12 +4,12 @@
 -----
 
 Mod unlocking console and adding 'F9' keybind for time stop, 'L' for camera light toogle and '/' bind for free camera in MiSide game. 
-Supports custom keybinds through keybinds.json file now
+Supports custom keybinds through keybinds.json file now, [keys names](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/KeyCode.html) 
 
 -----
 
 Мод разблокирующий консоль и добавляющий бинд 'F9' для остановки времени, бинд 'L' для включения/выключения освещения камеры и бинд '/' для свободной камеры в игре MiSide.
-Теперь поддерживает пользовательские бинды через файл keybinds.json
+Теперь поддерживает пользовательские бинды через файл keybinds.json, [названия клавиш] (https://docs.unity3d.com/6000.0/Documentation/ScriptReference/KeyCode.html) 
 
 -----
 
